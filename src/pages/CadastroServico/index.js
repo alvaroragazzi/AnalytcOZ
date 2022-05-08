@@ -5,10 +5,6 @@ import styles from "./styles.js";
 import Navbar from "../../components/Navbar";
 
 export default () => {
-    React.useEffect(() => {
-        document.title = "AnalytcOZ";
-    }, []);
-
     return (
         <div>
              <Navbar/>

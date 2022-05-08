@@ -1,5 +1,3 @@
-import { textAlign } from "@mui/system"
-
 export default {
     container: {
         maxWidth: 350,
