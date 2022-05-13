@@ -1,18 +1,26 @@
 import api from "./api";
 
 export async function login(usuario, senha) {
-    let dados = [];
+    try {
+        const response = await api.get("login", {
+            auth: {
+                username: usuario,
+                password: senha
+            }
+        })
 
-    await api.get("login", {
-        auth: {
-            username: usuario,
-            password: senha
-        }
-    }).then(function(response) {
-        dados = response.data;
-    }).catch(function(error) {
-        dados = error.response.data;
-    })
+        localStorage.setItem("nome", response.nome);
+        return true;
+    } catch(error) {
+        console.log(error);
+    }
+}
 
-    return dados;
+export async function checkAuth() {
+    try {
+        await api.get("checkAuth");
+        return true;
+    } catch(error) {
+        return false;
+    }
 }

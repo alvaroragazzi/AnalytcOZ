@@ -38,7 +38,6 @@ export default () => {
 
     const navigate = useNavigate();
 
-
     async function loginRequest() {
       if (usuario.match(/^ *$/) !== null || senha.match(/^ *$/) !== null ){
           setMensagem("Usuário ou senha não definido(s)");
@@ -50,8 +49,8 @@ export default () => {
       const response = await login(usuario, senha);
       setLoading(false);
 
-      if (typeof(response) !== "object") {
-        setMensagem(response);
+      if (!response) {
+        setMensagem("Usuário ou senha incorreto(s)");
         return;
       }
 

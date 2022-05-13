@@ -14,10 +14,10 @@ export default () => {
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/login" replace />} />
-            <Route exact path="/login" element={ <Authenticated>  <Login/> </Authenticated> }/>
+            <Route exact path="/login" element={ <Authenticated> <Login/> </Authenticated> }/>
 
             {/* todas as rotas que precisarem de login e NAVBAR, colocar aqui dentro */}
-            <Route element={(<> <Navbar/> <ProtectedRoute/> <Outlet/> </>)}>
+            <Route element={(<> <ProtectedRoute/> <Navbar/> <Outlet/> </>)}>
                 <Route exact path="/inicio" element={ <Inicio/> }/>            
                 <Route exact path="/cadastroServico" element={ <CadastroServico/> }/>
                 <Route exact path="/cadastroProduto" element={ <CadastroProduto/> }/>

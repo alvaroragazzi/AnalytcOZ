@@ -1,7 +1,21 @@
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
+import { checkAuth } from "./services/request";
+import React from "react";
 
 function App() {
+  React.useEffect(() => {
+    async function checkIfAuth() {
+      const isAuth = await checkAuth();
+
+      if (!isAuth) {
+        localStorage.removeItem("name");
+      }
+    }
+
+    checkIfAuth();
+  }, []);
+
   return (
     <div>
       <style> 
