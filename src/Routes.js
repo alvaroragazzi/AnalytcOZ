@@ -22,6 +22,7 @@ export default () => {
                 <Route exact path="/cadastroServico" element={ <CadastroServico/> }/>
                 <Route exact path="/cadastroProduto" element={ <CadastroProduto/> }/>
                 <Route exact path="/cadastroCliente" element={ <CadastroCliente/> }/>
+                <Route exact path="/registroVenda" element={ <RegistrarVenda/> }/>
             </Route>
         </Routes>
     );

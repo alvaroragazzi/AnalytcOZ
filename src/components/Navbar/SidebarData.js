@@ -39,5 +39,12 @@ export const SidebarData = [
         icon: <IoMdPersonAdd/>
       }
     ]
-  }
+  },
+  {
+    title: "Venda",
+    path: "/registroVenda",
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />
+  },
 ];
