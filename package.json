@@ -1,7 +1,8 @@
 {
   "name": "analytcoz",
-  "homepage": "http://analytcoz-react-com.preview-domain.com",
+  "homepage": "https://analytcoz.herokuapp.com",
   "version": "0.1.0",
+  "proxy": "https://analytcoz-backend.herokuapp.com",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -27,7 +28,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node --max_old_space_size=2560 node_modules/.bin/react-scripts start",
+    "start": "react-scripts start",
     "build": "node --max_old_space_size=2560 node_modules/.bin/react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

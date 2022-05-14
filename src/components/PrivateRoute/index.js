@@ -1,11 +1,11 @@
 import { Navigate, useLocation } from "react-router-dom";
 
 export default ({children}) => {
-    const nome = localStorage.getItem("nome");
     const location = useLocation();
+    const info = localStorage.getItem("info");
 
-    if (nome)
-        return <Navigate to="/inicio" replace state={{ from: location }}/>;
+    if (!info)
+        return <Navigate to="/login" replace state={{ from: location }}/>;
 
     return children;
 }

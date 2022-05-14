@@ -2,15 +2,19 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 import { checkAuth } from "./services/request";
 import React from "react";
+import { Spinner } from "react-activity";
 
 function App() {
+  const [loading, setLoading] = React.useState(true);
+
   React.useEffect(() => {
     async function checkIfAuth() {
       const isAuth = await checkAuth();
 
-      if (!isAuth) {
-        localStorage.removeItem("name");
-      }
+      if (!isAuth)
+        localStorage.removeItem("info");
+      
+      setLoading(false);
     }
 
     checkIfAuth();
@@ -31,10 +35,12 @@ function App() {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
       </head>
-      
-      <BrowserRouter>
-        <Routes/>
-      </BrowserRouter>
+        
+        {loading ? <Spinner style={{margin: "auto", marginTop: 400, width: 50, height: 50}}/> :
+          <BrowserRouter>
+            <Routes/>
+          </BrowserRouter>
+        }
     </div>
   );
 }

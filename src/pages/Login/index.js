@@ -54,7 +54,7 @@ export default () => {
         return;
       }
 
-      localStorage.setItem("token", response[0].token);
+      localStorage.setItem("info", response);
 
       navigate("/inicio");
     }

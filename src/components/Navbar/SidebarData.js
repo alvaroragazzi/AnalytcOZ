@@ -15,11 +15,10 @@ export const SidebarData = [
   },
   {
     title: "Cadastros",
-    path: "#",
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
+    path: "#",
     subNav: [
       {
         title: "Cadastro de produto",
@@ -42,7 +41,7 @@ export const SidebarData = [
   },
   {
     title: "Venda",
-    path: "/registroVenda",
+    path: "/cadastroVenda",
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />

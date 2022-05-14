@@ -17,11 +17,12 @@ const Nav = styled.div`
   align-items: center;
 `;
 
-const NavIcon = styled(Link)`
+const NavIcon = styled.a`
   margin-left: 2rem;
   font-size: 2rem;
   height: 80px;
   display: flex;
+  cursor: pointer;
   justify-content: flex-start;
   align-items: center;
 `;
@@ -52,13 +53,13 @@ const Sidebar = () => {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
-          <NavIcon to='#'>
+          <NavIcon>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
-            <NavIcon to='#'>
+            <NavIcon>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
             {SidebarData.map((item, index) => {
