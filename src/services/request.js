@@ -24,3 +24,21 @@ export async function checkAuth() {
         return false;
     }
 }
+
+export async function cadastrarProduto(dados) {
+    try {
+        await api.post("cadastrarProduto", dados)
+        return true;
+    } catch(error) {
+        return false;
+    }
+}
+
+export async function cadastrarServico(dados) {
+    try {
+        await api.post("cadastrarServico", dados)
+        return true;
+    } catch(error) {
+        return false;
+    }
+}

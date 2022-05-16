@@ -4,6 +4,7 @@ import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
 import { IoMdPersonAdd, IoIosPaper } from "react-icons/io";
 import { GoDiffAdded } from "react-icons/go";
+import { MdSell } from "react-icons/md";
 
 export const SidebarData = [
   {
@@ -41,8 +42,8 @@ export const SidebarData = [
   },
   {
     title: "Venda",
-    path: "/cadastroVenda",
-    icon: <AiIcons.AiFillHome />,
+    path: "/registroVenda",
+    icon: <MdSell/>,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />
   },

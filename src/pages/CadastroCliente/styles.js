@@ -3,8 +3,8 @@ export default {
         maxWidth: 1000,
         padding: 20, 
         borderRadius: 10,
-        boxShadow: "0px 0px 12px -5px",
+        boxShadow: "0px 0px 8px -4px",
         margin: "auto",
-        marginTop: 30
+        marginTop: 50
     }
 }

@@ -38,7 +38,7 @@ export default () => {
                     <Form.Control type="text" placeholder="Insira o CEP do cliente" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="dark" type="submit">
                     Registrar Venda
                 </Button>
             </Form>
