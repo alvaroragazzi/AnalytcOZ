@@ -9,18 +9,20 @@ import RegistroVenda from "./pages/RegistroVenda";
 import Inicio from "./pages/Inicio";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar";
+import LancamentoCusto from "./pages/LancamentoCusto";
 
 export default () => {
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/inicio" replace />} />
                 <Route exact path="/login" element={ <Login/>  }/>
-                <Route element={(<> <PrivateRoute/> <Navbar/> <Outlet/> </>)}>
+                <Route element={(<>  <Navbar/> <Outlet/> </>)}>
                     <Route exact path="/inicio" element={ <Inicio/> }/>            
                     <Route exact path="/cadastroServico" element={ <CadastroServico/> }/>
                     <Route exact path="/cadastroProduto" element={ <CadastroProduto/> }/>
                     <Route exact path="/cadastroCliente" element={ <CadastroCliente/> }/>
                     <Route exact path="/registroVenda" element={ <RegistroVenda/> }/>
+                    <Route exact path="/lancamentoCusto" element={ <LancamentoCusto/> }/>
                 </Route>
         </Routes>
     );
