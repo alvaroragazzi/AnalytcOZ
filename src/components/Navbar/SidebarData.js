@@ -47,4 +47,11 @@ export const SidebarData = [
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />
   },
+  {
+    title: "Custos",
+    path: "/lancamentoCusto",
+    icon: <MdSell/>,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />
+  },
 ];
