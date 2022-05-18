@@ -38,7 +38,7 @@ export default () => {
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Nome do Produto</Form.Label>
-                        <Form.Control onChange={a => updateInputInfo("nome", a.target.value)} type="text" placeholder="Ex: Artes(de album) beats produzidos e etc." />
+                        <Form.Control onChange={a => updateInputInfo("nome", a.target.value)} type="text" placeholder="Insira aqui o nome do produto" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">

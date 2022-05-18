@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Bounce } from "react-activity";
@@ -38,7 +39,7 @@ export default () => {
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Nome do Serviço</Form.Label>
-                        <Form.Control onChange={a => updateInputInfo("descricao", a.target.value)} type="text" placeholder="Ex: captação de voz, mixagem e etc." />
+                        <Form.Control onChange={a => updateInputInfo("descricao", a.target.value)} type="text" placeholder="Insira aqui a descricao do serviço." />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -47,8 +48,8 @@ export default () => {
                     </Form.Group>
                     
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Tempo de duração do serviço</Form.Label>
-                        <Form.Control onChange={a => updateInputInfo("tempo_gasto", a.target.value)} type="text" placeholder="Ex: 1 hora por captação, ou tempo gasto de mixagem em média" />
+                        <Form.Label>Tempo de duração do serviço(Horas)</Form.Label>
+                        <Form.Control onChange={a => updateInputInfo("tempo_gasto", a.target.value)} type="text" placeholder="Insira o tempo médio(em horas) que leva para executar o serviço" />
                     </Form.Group>
                 
                     <Button onClick={sendInputInfo} variant="dark">
