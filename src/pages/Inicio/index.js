@@ -5,20 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default () => {
     return (
         <div style={{margin: "100px", display: "block"}}>
+            
+            
             <iframe
-            title="Faturamento diário"
-                src="http://localhost:5000/public/dashboard/289372f0-5050-4815-b867-d49d21ee682d"
+            title="Faturamento Diário"
+                src="http://analytcoz-metabase.herokuapp.com/public/dashboard/90c6e153-605a-4a68-805a-44a947f19724"
                 frameborder="0"
-                width="1000"
-                height="400"
+                width="800"
+                height="600"
                 allowtransparency
-            ></iframe>
+>           </iframe>
             <iframe
-            title="Faturamento Semanal"
-                src="http://localhost:5000/public/dashboard/2d5fb3a0-444e-4384-ac07-c820c117da2f"
+                title="Faturamento Semanal"
+                src="http://analytcoz-metabase.herokuapp.com/public/dashboard/cb9a1f8b-7fdc-42d3-b672-3ca74b81eae0"
                 frameborder="0"
-                width="1000"
-                height="400"
+                width="800"
+                height="600"
                 allowtransparency
             ></iframe>
         </div>
