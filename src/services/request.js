@@ -34,6 +34,15 @@ export async function cadastrarProduto(dados) {
     }
 }
 
+export async function logout() {
+    try {
+        await api.post("logout")
+        return true;
+    } catch(error) {
+        return false;
+    }
+}
+
 export async function cadastrarServico(dados) {
     try {
         await api.post("cadastrarServico", dados)
