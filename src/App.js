@@ -12,7 +12,7 @@ function App() {
       const isAuth = await checkAuth();
 
       if (!isAuth)
-        localStorage.removeItem("info");
+        localStorage.removeItem("nome");
       
       setLoading(false);
     }

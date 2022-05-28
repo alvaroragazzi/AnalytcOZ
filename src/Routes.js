@@ -16,7 +16,7 @@ export default () => {
         <Routes>
             <Route path="*" element={<Navigate to="/inicio" replace />} />
                 <Route exact path="/login" element={ <Login/>  }/>
-                <Route element={(<>  <Navbar/> <Outlet/> </>)}>
+                <Route element={(<>  <Navbar/> <PrivateRoute/> <Outlet/> </>)}>
                     <Route exact path="/inicio" element={ <Inicio/> }/>            
                     <Route exact path="/cadastroServico" element={ <CadastroServico/> }/>
                     <Route exact path="/cadastroProduto" element={ <CadastroProduto/> }/>

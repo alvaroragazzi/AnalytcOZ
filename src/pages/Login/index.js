@@ -54,8 +54,6 @@ export default () => {
         return;
       }
 
-      localStorage.setItem("info", response);
-
       navigate("/inicio");
     }
 

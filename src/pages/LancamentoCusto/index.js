@@ -6,15 +6,16 @@ import {NotificationContainer, NotificationManager} from "react-notifications";
 import "react-notifications/lib/notifications.css";
 import { Form, Button } from "react-bootstrap";
 import styles from "./styles.js";
-import { cadastrarServico } from "../../services/request";
+import { cadastrarCusto } from "../../services/request";
 
 export default () => {
     const [loading, setLoading] = React.useState(false);
 
     const [inputInfo, setInputInfo] = React.useState({
+        data_lancamento: "",
         descricao: "",
         valor: "",
-        tempo_gasto: ""
+        fornecedor: ""
     });
 
     const updateInputInfo = (key, value) => {
@@ -24,13 +25,12 @@ export default () => {
     const sendInputInfo = async() => {
         if (!loading)
             setLoading(true);
-            const response = await cadastrarServico(inputInfo);
+            const response = await cadastrarCusto(inputInfo);
             setLoading(false);
-            if (response) {
-                NotificationManager.success("Serviço cadastrado com sucesso", "Aviso");
-            } else {
-                NotificationManager.error("Falha ao cadastrar o serviço", "Aviso");
-            }
+            if (response) 
+                NotificationManager.success("Custo cadastrado com sucesso", "Aviso");
+            else 
+                NotificationManager.error("Falha ao cadastrar o custo", "Aviso");
     }
 
     return (

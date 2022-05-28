@@ -55,7 +55,7 @@ const Sidebar = () => {
 
   const logoutReq = async() => {
     logout();
-    localStorage.removeItem("info");
+    localStorage.removeItem("nome");
     navigate("/login");
   }
 
@@ -74,13 +74,13 @@ const Sidebar = () => {
             </NavIcon>
             <div style={{marginBottom: 10, marginLeft: 16, display: "flex", flexDirection: "row", alignContent: "center"}}>
               <IoMdPerson style={{width: 19, height: 19, cursor: "pointer"}}/>
-              <h1 style={{color: "#fff", fontSize: 16, marginLeft: 5}}>Alvaro Ragazzi</h1>
+              <h1 style={{color: "#fff", fontSize: 16, marginLeft: 5}}>{localStorage.getItem("nome")}</h1>
               <div style={{cursor: "pointer", marginLeft: 90}}>
                 <IoIosLogOut style={{width: 21, height: 21, marginBottom: 7}} onClick={logoutReq}/>
               </div>
             </div>
             {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
+              return <SubMenu showSidebar={showSidebar} item={item} key={index} />;
             })}
           </SidebarWrap> 
         </SidebarNav>
