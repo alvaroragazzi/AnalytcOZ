@@ -36,7 +36,12 @@ function App() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
       </head>
         
-        {loading ? <Spinner style={{margin: "auto", marginTop: 400, width: 50, height: 50}}/> :
+
+        {loading ? 
+          <div style={{display: "flex",  justifyContent: "center", alignItems: "center", height: "100vh"}}>
+            <Spinner style={{width: 50, height: 50}}/> 
+          </div>
+        :
           <BrowserRouter>
             <Routes/>
           </BrowserRouter>

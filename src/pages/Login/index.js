@@ -20,7 +20,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#000000',
+      main: '#15171c',
       darker: '#000000',
     },
     neutral: {
@@ -65,23 +65,23 @@ export default () => {
             <div style={styles.container}>
                 {loading && <Bounce style={{marginBottom: 5}}/>}
                 {mensagem && <h1 style={{color: "red", fontSize: 15}} >{mensagem}</h1>}
-                <Box
-                    component="form"
-                    sx={{"& > :not(style)": { minWidth: "33.5ch" }}}
-                    noValidate
-                    autoComplete="off"
-                >
-                
-                <ThemeProvider theme={theme}>
-                    <TextField onChange={a => setUsuario(a.target.value)} color="primary" style={{marginBottom: 9, marginTop: 25}} id="outlined-basic" label="Usuário" variant="outlined" />
-                    <TextField type="password" onChange={a => setSenha(a.target.value)} color="primary" style={{marginBottom: 11}} id="outlined-basic" label="Senha" variant="outlined" />  
-                </ThemeProvider>
-                </Box>
-                <ThemeProvider theme={theme}>
-                    <Button onClick={loginRequest} color="primary" variant="contained">Entrar</Button>
-                </ThemeProvider>
+                  <Box
+                      component="form"
+                      sx={{"& > :not(style)": { minWidth: "33.5ch" }}}
+                      noValidate
+                      autoComplete="off"
+                  >
+                  
+                  <ThemeProvider theme={theme}>
+                      <TextField onChange={a => setUsuario(a.target.value)} color="primary" style={{marginBottom: 9, marginTop: 25}} id="outlined-basic" label="Usuário" variant="outlined" />
+                      <TextField type="password" onChange={a => setSenha(a.target.value)} color="primary" style={{marginBottom: 11}} id="outlined-basic" label="Senha" variant="outlined" />  
+                  </ThemeProvider>
+                  </Box>
+                  <ThemeProvider theme={theme}>
+                      <Button onClick={loginRequest} color="primary" variant="contained">Entrar</Button>
+                  </ThemeProvider>
             </div>
-            <div style={{minHeight: 400, backgroundColor: "black"}}/>
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "50vh", backgroundColor: "#15171c"}}/>
         </div>
     );
 }
