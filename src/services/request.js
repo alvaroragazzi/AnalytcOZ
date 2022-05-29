@@ -36,7 +36,7 @@ export async function checkAuth() {
 
 export async function cadastrarProduto(dados) {
     try {
-        await api.post("produto", dados)
+        await api.post("produto", dados);
         return true;
     } catch(error) {
         return false;
@@ -45,7 +45,7 @@ export async function cadastrarProduto(dados) {
 
 export async function cadastrarCliente(dados) {
     try {
-        await api.post("cliente", dados)
+        await api.post("cliente", dados);
         return true;
     } catch(error) {
         return false;
@@ -54,7 +54,7 @@ export async function cadastrarCliente(dados) {
 
 export async function cadastrarCusto(dados) {
     try {
-        await api.post("custo", dados)
+        await api.post("custo", dados);
         return true;
     } catch(error) {
         return false;
@@ -63,8 +63,44 @@ export async function cadastrarCusto(dados) {
 
 export async function cadastrarServico(dados) {
     try {
-        await api.post("servico", dados)
+        await api.post("servico", dados);
         return true;
+    } catch(error) {
+        return false;
+    }
+}
+
+export async function cadastrarVenda(dados) {
+    try {
+        await api.post("venda", dados);
+        return true;
+    } catch(error) {
+        return false;
+    }
+}
+
+export async function getListaClientes() {
+    try {
+        const result = await api.get("cliente");
+        return result.data;
+    } catch(error) {
+        return false;
+    }
+}
+
+export async function getListaProdutos() {
+    try {
+        const result = await api.get("produto");
+        return result.data;
+    } catch(error) {
+        return false;
+    }
+}
+
+export async function getListaServicos() {
+    try {
+        const result = await api.get("servico");
+        return result.data;
     } catch(error) {
         return false;
     }
