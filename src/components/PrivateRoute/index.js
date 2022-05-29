@@ -1,4 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
+import React from "react";
 
 export default ({children}) => {
     const location = useLocation();
