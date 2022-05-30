@@ -25,7 +25,9 @@ export default () => {
         setInputInfo(inputInfo => ({...inputInfo, [key]: encodeURI(value)}))
     }
 
-    const sendInputInfo = async() => {
+    const sendInputInfo = async(e) => {
+        e.preventDefault();
+
         if (!loading)
             setLoading(true);
             const response = await cadastrarServico(inputInfo);
@@ -52,9 +54,11 @@ export default () => {
                                 <TextField onChange={a => updateInputInfo("nome", a.target.value)} label="Nome do serviço" />
                                 <TextField onChange={a => updateInputInfo("valor", a.target.value)} label="Valor do serviço" />
                                 <TextField onChange={a => updateInputInfo("tempo_gasto", a.target.value)} label="Tempo médio(em horas) que leva para executar o serviço" />
-                                <Button sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                <div style={{flexDirection: "row"}}>
+                                    <Button type="submit" sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                    {loading && <Bounce style={{marginLeft: 10}} />}
+                                </div>
                             </ThemeProvider>
-                            {loading && <Bounce style={{marginLeft: 10}} />}
                         </Stack>
                     </Paper>
                 </div>

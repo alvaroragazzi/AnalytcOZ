@@ -26,7 +26,9 @@ export default () => {
         setInputInfo(inputInfo => ({...inputInfo, [key]: encodeURI(value)}))
     }
 
-    const sendInputInfo = async() => {
+    const sendInputInfo = async(e) => {
+        e.preventDefault();
+
         if (!loading)
             setLoading(true);
             const response = await cadastrarCusto(inputInfo);
@@ -49,13 +51,15 @@ export default () => {
                     <Paper sx={{ padding: 4, margin: 2, width: 700}}>
                         <Stack spacing={2}>
                             <ThemeProvider theme={FormTheme}>
-                                <TextField onChange={a => updateInputInfo("data_lancamento", a.target.value)} label="Data de lançamento" />
-                                <TextField onChange={a => updateInputInfo("descricao", a.target.value)} label="Descrição" />
-                                <TextField onChange={a => updateInputInfo("valor", a.target.value)} label="Valor" />
-                                <TextField onChange={a => updateInputInfo("fornecedor", a.target.value)} label="Fornecedor" />
-                                <Button sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                <TextField required type="date" InputLabelProps={{ shrink: true, required: true }} onChange={a => updateInputInfo("data_lancamento", a.target.value)} label="Data de lançamento" />
+                                <TextField required onChange={a => updateInputInfo("descricao", a.target.value)} label="Descrição" />
+                                <TextField required onChange={a => updateInputInfo("valor", a.target.value)} label="Valor" />
+                                <TextField required onChange={a => updateInputInfo("fornecedor", a.target.value)} label="Fornecedor" />
+                                <div style={{flexDirection: "row"}}>
+                                    <Button type="submit" sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                    {loading && <Bounce style={{marginLeft: 10}} />}
+                                </div>
                             </ThemeProvider>
-                            {loading && <Bounce style={{marginLeft: 10}} />}
                         </Stack>
                     </Paper>
                 </div>

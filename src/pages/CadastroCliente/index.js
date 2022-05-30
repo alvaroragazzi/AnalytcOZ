@@ -60,9 +60,11 @@ export default () => {
                                 <TextField onChange={a => updateInputInfo("bairro", a.target.value)} required label="Bairro" />
                                 <TextField onChange={a => updateInputInfo("logradouro", a.target.value)} required label="Logradouro" />
                                 <TextField onChange={a => updateInputInfo("cep", a.target.value)} required label="CEP" />
-                                <Button sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                <div style={{flexDirection: "row"}}>
+                                    <Button type="submit" sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                    {loading && <Bounce style={{marginLeft: 10}} />}
+                                </div>
                             </ThemeProvider>
-                            {loading && <Bounce style={{marginLeft: 10}} />}
                         </Stack>
                     </Paper>
                 </div>

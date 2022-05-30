@@ -49,7 +49,9 @@ export default () => {
         return pass;
     }
 
-    async function sendRequest() {
+    async function sendRequest(e) {
+        e.preventDefault();
+
         if (verifyErrors()) {
             if (!loading)
                 setLoading(true);
@@ -61,9 +63,9 @@ export default () => {
                 setLoading(false);
 
                 if (response) {
-                    NotificationManager.success("Cliente cadastrado com sucesso", "Aviso");
+                    NotificationManager.success("Venda registrada com sucesso", "Aviso");
                 } else {
-                    NotificationManager.error("Falha ao cadastrar o cliente", "Aviso");
+                    NotificationManager.error("Falha ao registrar a venda", "Aviso");
                 }
         }
     }
@@ -144,7 +146,7 @@ export default () => {
                                 <ThemeProvider theme={FormTheme}>
                                     <Autocomplete
                                         options={clientList}
-                                        onChange={(event, value) => setclienteSelecionado(value.id)}
+                                        onChange={(event, value) => value && setclienteSelecionado(value.id)}
                                         getOptionLabel={option => option.nome}
                                         renderInput={(params) => <TextField {...params} label="Cliente" />}
                                         renderOption={(props, option) => {
@@ -191,9 +193,11 @@ export default () => {
                                             rowsPerPageOptions={[]}
                                         />
                                     </div>
-                                    <Button sx={{width: 200}} onClick={sendRequest} variant="contained">Cadastrar</Button>
+                                    <div style={{flexDirection: "row"}}>
+                                        <Button type="submit" sx={{width: 200}} onClick={sendRequest} variant="contained">Cadastrar</Button>
+                                        {loading && <Bounce style={{marginLeft: 10}} />}
+                                    </div>
                                 </ThemeProvider>
-                                {loading && <Bounce style={{marginLeft: 10}} />}
                             </Stack>
                         </Paper>
                     </div>

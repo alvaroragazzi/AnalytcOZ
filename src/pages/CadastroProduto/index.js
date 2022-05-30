@@ -51,9 +51,11 @@ export default () => {
                                 <ThemeProvider theme={FormTheme}>
                                     <TextField onChange={a => updateInputInfo("nome", a.target.value)} required label="Nome do produto" />
                                     <TextField onChange={a => updateInputInfo("valor", a.target.value)} required label="Valor" />
-                                    <Button sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                    <div style={{flexDirection: "row"}}>
+                                        <Button sx={{width: 200}} onClick={sendInputInfo} variant="contained">Cadastrar</Button>
+                                        {loading && <Bounce style={{marginLeft: 10}} />}
+                                    </div>
                                 </ThemeProvider>
-                                {loading && <Bounce style={{marginLeft: 10}} />}
                             </Stack>
                         </Paper>
                     </div>
